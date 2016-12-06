@@ -49,7 +49,7 @@ class netmon:
         for iface in _start:
             resp[iface] = {}
             for key in _start[iface]:
-                resp[iface][key] = int(_start[iface][key] + _end[iface][key] / diff)
+                resp[iface][key] = int(_end[iface][key] - _start[iface][key] / diff)
         resp['host'] = socket.gethostname()
         if self.logpath is not False:
             self.log2file(resp)
