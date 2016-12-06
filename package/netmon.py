@@ -89,7 +89,7 @@ class netmon:
                 es = Elasticsearch(self.elasticsearchhost)
             resp['timestamp'] = dt.utcnow()
             es.index(index=self.elasticsearchindex, doc_type='netmon', body=resp)
-        except Elasticsearch.connection_error:
+        except Exception:
             sys.exit(1)
 
     def collectonce(self):
