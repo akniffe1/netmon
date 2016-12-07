@@ -60,7 +60,6 @@ averages in units / second, and provides simple methods to either log the JSON t
             "trans_bytes": 12032
           },
           "host": "<hostname>",
-          "timestamp": "2016-12-06T20:56:33.786645",
           "eth0": {
             "trans_packets": 18,
             "recv_compressed": 0,
@@ -84,10 +83,15 @@ averages in units / second, and provides simple methods to either log the JSON t
 
 **Installation:**
 
-sudo python setup.py install OR 
+```
+sudo python setup.py install 
+```
 
+OR 
+
+```
 pip install git+https://github.com/akniffe1/netmon
-
+```
 
 **CLI Usage**
 
@@ -152,6 +156,7 @@ netmon --eshost localhost:9200 --esuser user --espwd p@sSw0rD --esindex notnetmo
 ```
 
 **Schedule Me**
+
 A decent application of netmon would be to invoke it via cron job on a reasonable reporting interval (say 5 minutes) like so:
 ```
 5   *   *   *   * netmon --eshost localhost:9200 --esindex notnetmon
