@@ -50,7 +50,7 @@ class netmon:
             resp[iface] = {}
             for key in _start[iface]:
                 if key == "recv_bytes":
-                    resp[iface]["recv_mbps"] = float(((_end[iface][key] - _start[iface][key]) / diff) / 1000000 )
+                    resp[iface]["recv_mbps"] = float(((_end[iface][key] - _start[iface][key]) / diff) << 20 )
                 else:
                     resp[iface][key] = int((_end[iface][key] - _start[iface][key]) / diff)
         resp['host'] = socket.gethostname()
